@@ -10,7 +10,7 @@ class ReturnDict(OrderedDict):
     to use if they need richer field information.
     """
     def __init__(self, *args, **kwargs):
-        self.serializer = kwargs.pop('serializer')
+        self.serializer = kwargs.pop('serializer', None)
         super(ReturnDict, self).__init__(*args, **kwargs)
 
     def copy(self):
@@ -27,7 +27,7 @@ class ReturnList(list):
     to use if they need richer field information.
     """
     def __init__(self, *args, **kwargs):
-        self.serializer = kwargs.pop('serializer')
+        self.serializer = kwargs.pop('serializer', None)
         super(ReturnList, self).__init__(*args, **kwargs)
 
     def __repr__(self):
